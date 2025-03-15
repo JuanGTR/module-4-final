@@ -1,0 +1,298 @@
+/* style.css */
+
+/* Global Styles */
+body {
+    font-family: "Lato", sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* Improved readability */
+  }
+  
+  /* Search Block */
+
+  .search {
+    padding: 4rem;
+    text-align: center;
+    background-color: #111; /* Fallback color */
+    background-image: url('https://images.stockcake.com/public/e/2/0/e20d813b-6a79-4805-8ace-ff8abe0f1d47_large/elegant-movie-theater-stockcake.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; /* This makes the background image fixed */
+    position: relative; /* For the overlay */
+    color: #fff;
+    overflow: hidden; /* To contain the overlay */
+  }
+  
+  /* Optional: Subtle dark gradient overlay for a fancier look */
+  .search::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%); /* Adjust the gradient as needed */
+    z-index: 0;
+  }
+  
+  /* Ensure your content is above the overlay */
+  .search > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  
+  /* Search Navigation */
+  .search__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2.5rem; /* Increased margin */
+  }
+  
+  /* Search Logo */
+  .search__logo {
+    margin-right: 1.5rem; /* Increased margin */
+  }
+  
+  .search__logo img {
+    width: 60px; /* Slightly larger logo */
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  }
+  
+  /* Search Title */
+  .search__title {
+    font-size: 1.8rem; /* Slightly larger title */
+    font-weight: bold;
+    letter-spacing: 0.5px; /* Subtle letter spacing */
+  }
+  
+  /* Search Content */
+  .search__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Search Heading */
+  .search__heading {
+    font-size: 2.5rem; /* More prominent heading */
+    margin-bottom: 1.5rem;
+    font-weight: 500; /* Lighter font weight */
+  }
+  
+  /* Search Input Wrapper */
+  .search__input-wrapper {
+    display: flex;
+    border-radius: 30px; /* More rounded corners */
+    overflow: hidden;
+    border: 1px solid #333;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6); /* Deeper shadow */
+  }
+  
+  /* Search Input */
+  .search__input {
+    padding: 1rem 1.5rem; /* Increased padding */
+    border: none;
+    background-color: #111;
+    color: #fff;
+    font-size: 1.1rem; /* Slightly larger font */
+    flex-grow: 1;
+    border-radius: 30px 0 0 30px; /* Rounded on the left */
+  }
+  
+  .search__input::placeholder {
+    color: #777;
+    font-style: italic; /* More subtle placeholder */
+  }
+  
+  .search__input:focus {
+    outline: none;
+    background-color: #222;
+  }
+  
+  /* Search Button */
+  .search__button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem; /* Increased padding */
+    font-size: 1.1rem; /* Slightly larger font */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out; /* Added transform */
+    border-radius: 0 30px 30px 0; /* Rounded on the right */
+  }
+  
+  .search__button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Subtle scale on hover */
+  }
+  
+  .search__button:active {
+    transform: scale(0.95); /* Feedback on click */
+  }
+  
+  /* Results Block */
+  .results {
+    padding: 3rem; /* Increased padding */
+  }
+  
+  /* Results Wrapper */
+  .results__wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Results Info */
+  .results__info {
+    font-size: 1.8rem; /* Slightly larger */
+    margin-bottom: 2rem; /* Increased margin */
+    font-weight: 500;
+  }
+  
+  /* Results Filter */
+  .results__filter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem; /* Increased margin */
+  }
+  
+  /* Results Filter Label */
+  .results__filter-label {
+    margin-right: 1rem; /* Increased margin */
+    font-size: 1.1rem;
+  }
+  
+  /* Results Filter Dropdown */
+  .results__filter-dropdown {
+    padding: 0.75rem 1.5rem; /* Increased padding */
+    border: 1px solid #333;
+    background-color: #111;
+    color: #fff;
+    border-radius: 30px; /* More rounded */
+    font-size: 1.1rem;
+    appearance: none; /* Remove default arrow */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: 50%;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+  
+  .results__filter-dropdown:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  /* Results List */
+  .results__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly wider cards */
+    gap: 2.5rem; /* Increased gap */
+  }
+  
+  /* Movie Block */
+  .movie {
+    background-color: #111;
+    border-radius: 12px; /* More rounded corners */
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* More pronounced shadow */
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .movie:hover {
+    transform: translateY(-8px); /* More noticeable lift */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Enhanced shadow on hover */
+  }
+  
+  /* Movie Image Wrapper */
+  .movie__image-wrapper {
+    aspect-ratio: 2/3;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0; /* Rounded top corners */
+  }
+  
+  /* Movie Image */
+  .movie__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out; /* Subtle zoom on hover */
+  }
+  
+  .movie:hover .movie__image {
+    transform: scale(1.05);
+  }
+  
+  /* Movie Details */
+  .movie__details {
+    padding: 1.5rem; /* Increased padding */
+  }
+  
+  /* Movie Title */
+  .movie__title {
+    font-size: 1.3rem; /* Slightly larger */
+    margin-bottom: 0.75rem; /* Increased margin */
+    color: #eee;
+    font-weight: 500;
+  }
+  
+  /* Movie Year */
+  .movie__year {
+    font-size: 1rem; /* Slightly larger */
+    color: #777;
+    margin-bottom: 0.5rem; /* Increased margin */
+  }
+  
+  /* Movie Rating */
+  .movie__rating {
+    font-size: 1rem; /* Slightly larger */
+    color: #777;
+  }
+  
+  .movie__rating strong {
+    color: #007bff; /* Blue accent for rating */
+    font-weight: bold;
+  }
+
+  /* ... LOADING ... */
+
+.results__loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+    font-size: 60px;
+    color: #007bff; /* Using blue as the accent color for the spinner */
+  }
+  
+  .results__loading .results__loading--spinner {
+    display: none; /* Initially hidden */
+  }
+  
+  /* Class to show the spinner */
+  .results__loading.is-loading .results__loading--spinner {
+    display: block;
+  }
+  
+  .fa-spinner {
+    animation: rotate 600ms infinite linear;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }

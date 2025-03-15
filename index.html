@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+    </style>
+  <script src="https://kit.fontawesome.com/c3d18c2968.js" crossorigin="anonymous"></script>
+  <title>JTmovies</title>
+</head>
+<body>
+  <section class="search">
+    <nav class="search__nav">
+      <div class="search__logo">
+        <img src="https://lh3.googleusercontent.com/gg-dl/AA8i_VJ9XWBXxSWE-l3F3HMnx9HgJtLEBcs2nn1zbyXzYHlZ0km5eFh8v45sBXKTos4FGP88kR68IeV3ICdNznkw7Zj0xU1uV0zXb_bl-WtTy1bKWkjavyaBX5-gfFyo-uwaTGmPogf8h2Lq7ZuZukQqEfM3q0IjXFuo59QU4Rm7rUBwreCYMA=s1024" alt="Jtmovies logo">
+      </div>
+      <div class="search__title">JTMOVIES</div>
+    </nav>
+    <div class="search__content">
+      <h1 class="search__heading">Browse Our Movies</h1>
+      <div class="search__input-wrapper">
+        <input class="search__input" type="text" placeholder="Search movies">
+        <button class="search__button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="results">
+    <div class="results__wrapper">
+        <div class="results__loading">
+            <i class="fas fa-spinner results__loading--spinner"></i>
+          </div>
+      <h1 class="results__info">Featured Movies:</h1>
+
+       <!-- Filter Dropdown -->
+    <div class="results__filter">
+        <label for="filter-options" class="results__filter-label">Sort By:</label>
+        <select id="filter-options" class="results__filter-dropdown">
+          <option value="" disabled selected>Select</option>
+          <option value="year_asc">Year (Oldest to Newest)</option>
+          <option value="year_desc">Year (Newest to Oldest)</option>
+          <option value="rating_high">Rating (High to Low)</option>
+          <option value="rating_low">Rating (Low to High)</option>
+        </select>
+      </div>
+  
+      <div class="results__list">
+        
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
