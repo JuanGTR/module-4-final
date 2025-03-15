@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to fetch movie data by ID
   async function fetchMovieData(movieId) {
     try {
-      const response = await fetch(`http://www.omdbapi.com/?i=${movieId}&apikey=${apiKey}`);
+      const response = await fetch(`https://www.omdbapi.com/?i=${movieId}&apikey=${apiKey}`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to fetch movies by search term
   async function fetchMoviesBySearch(searchTerm) {
     try {
-      const response = await fetch(`http://www.omdbapi.com/?s=${searchTerm}&apikey=${apiKey}`);
+      const response = await fetch(`https://www.omdbapi.com/?s=${searchTerm}&apikey=${apiKey}`);
       const data = await response.json();
       return data;
     } catch (error) {
